@@ -4,9 +4,9 @@
 `As a developer I want to ensure that I am coding everything clearly and not repetitively so that there will be less room for error later on.`
 `As a programmer I want my organization of my git commits and README documentation to be clear and accurate so that I will be able to fix any errors that I have quickly without the need for further debugging.`
 
-Day 1 working on the setup for the project and the html to start
-Day 2 working on the CSS for the project and trying to get started on the Javascript
-Day 3 work on the Javascript and start getting the JSON and AJAX
-Day 4 wrap everything up.
+`Day 1 working on the setup for the project and the html to start`
+`Day 2 working on the CSS for the project and trying to get started on the Javascript`
+`Day 3 work on the Javascript and start getting the JSON and AJAX`
+`Day 4 wrap everything up.`
 
-I do not have any questions so far, but I can tell you that I am not feeling confident at all.
+Going to start with the main page setup, followed followed by the login

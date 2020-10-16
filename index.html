@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic-Tac-Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,55 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <header class="container">
+        <h1>Frozen-Tic-Tac-Toe</h1>
+          <section>
+            <form id="sign-up-form">
+
+              <label for="sign-up">Email</label>
+              <input id="sign-up" type="Email" name="credentials[email]" placeholder="Email" />
+
+              <label for="sign-up-password">Password</label>
+              <input id="sign-up-password" type="password" name="credentials[password]" placeholder="Password" />
+
+              <label for="sign-up-password_confirmation">Confirm Password</label>
+              <input id="sign-up-password_confirmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" />
+
+              <input type="submit" value="Sign up" />
+
+            </form>
+          </section>
+          <section>
+            <form id="sign-in-form">
+
+              <label for="sign-in">Email</label>
+              <input id="sign-in" type="Email" name="credentials[email]" placeholder="Email" />
+
+              <label for="sign-in-password">Password</label>
+              <input id="sign-in-password" type="password" name="credentials[password]" placeholder="Password" />
+
+              <input type="submit" value="Log In">
+            </form>
+          </section>
+          <section>
+            <form id="sign-out-form">
+
+              <label for="sign out">Sign Out</label>
+              <input type="submit" value="Sign Out!">
+
+            </form>
+          </section>
+          <section>
+            <form id="change-password-form">
+
+              <label for="Change Password">Change Password</label>
+              <input type="password" name="password[old]" placeholder="Old Password">
+              <input type="password" name="password[new]" placeholder="New Password">
+              <input type="submit" value="Change Now">
+
+            </form>
+          </section>
+      </header>
+
     </body>
 </html>

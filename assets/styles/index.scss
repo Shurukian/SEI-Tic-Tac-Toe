@@ -1,1 +1,31 @@
 @import '~bootstrap/scss/bootstrap';
+
+.container {
+  height: 100vh;
+}
+
+.board {
+  margin: auto;
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
+
+  background: url('public/cat.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+
+  &:nth-child(3n) {
+    border-right: 0;
+  }
+
+  &:nth-child(-n+3) {
+    border-bottom: 0;
+  }
+}
