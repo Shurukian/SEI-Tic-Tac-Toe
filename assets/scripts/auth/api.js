@@ -29,15 +29,15 @@ const signOut = function () {
     }
   })
 }
-const changePassword = function () {
+const changePassword = function (data) {
   console.log('password change test')
 
   return $.ajax({
     url: config.apiUrl + '/change-password',
-    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
+    method: 'PATCH',
     data: data
   })
 }
