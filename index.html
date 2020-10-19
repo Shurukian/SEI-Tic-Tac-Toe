@@ -13,10 +13,12 @@
     </head>
     <body>
       <!-- using header for container 'div' for bootstrap -->
-      <header class="container">
+      <header class="container-header">
         <h1>Frozen-Tic-Tac-Toe</h1>
           <section>
             <form id="sign-up-form">
+
+              <legend>Sign Up!</legend>
 
               <label for="sign-up">Email</label>
               <input id="sign-up" type="Email" name="credentials[email]" placeholder="Email" />
@@ -33,6 +35,8 @@
           </section>
           <section>
             <form id="sign-in-form">
+
+              <legend>Sign In!</legend>
 
               <label for="sign-in">Email</label>
               <input id="sign-in" type="Email" name="credentials[email]" placeholder="Email" />
@@ -63,7 +67,7 @@
           </section>
       </header>
       <section class="container">
-        <div class="row board">
+        <div class="row h-100 board">
           <div class="col-4 box">x</div>
           <div class="col-4 box">x</div>
           <div class="col-4 box">x</div>

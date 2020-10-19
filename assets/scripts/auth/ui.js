@@ -10,14 +10,23 @@ const signUpFailure = function (err) {
 const signInSuccess = function (res) {
   $('#message').text('You are signed in and ready to play!')
   store.user = res.user
+  $('#change-password-form').show()
+  $('#sign-out-form').show()
+  $('#sign-up-form').hide()
+  $('#sign-in-form').hide()
 }
 const signInFailure = function (err) {
   $('#message').text('Your sign in has failed, Please try again.')
 }
 const signOutSuccess = function (res) {
   $('#message').text('We hope to see you back soon!')
-  $('form').trigger('reset')
   store.user = null
+  $('#change-password-form').hide()
+  $('#sign-out-form').hide()
+  $('#sign-up-form').show()
+  $('#sign-in-form').show()
+  $('#form').trigger('reset')
+
 }
 const signOutFailure = function (err) {
   $('#message').text('Your sign out has failed, Please try again.')
