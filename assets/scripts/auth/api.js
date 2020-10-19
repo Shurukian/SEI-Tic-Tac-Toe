@@ -19,8 +19,6 @@ const signIn = function (data) {
 }
 
 const signOut = function () {
-  console.log('Sign out complete!')
-
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
@@ -30,8 +28,6 @@ const signOut = function () {
   })
 }
 const changePassword = function (data) {
-  console.log('password change test')
-
   return $.ajax({
     url: config.apiUrl + '/change-password',
     headers: {

@@ -9,7 +9,7 @@
   max-height: calc(100vh - 75px);
   max-width: calc(100vh - 75px);
 
-  background: url('public/cat.jpg') no-repeat center;
+  // background: url('https://i.imgur.com/G24ElS3.jpg') no-repeat center;
   background-size: cover;
 }
 
@@ -17,15 +17,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  // this is the min of the height for each box.
+  min-height: calc(100% / 3);
 
+  background-color: white;
+
+  // creating column lines
   border-right: 1px solid black;
+  // creating row lines
   border-bottom: 1px solid black;
 
+// gets rid of the far right border of the board.
   &:nth-child(3n) {
     border-right: 0;
   }
 
-  &:nth-child(-n+3) {
+  &:nth-last-child(-n+3) {
     border-bottom: 0;
   }
+  &:hover {
+    background-color: LightBlue;
+  }
+
+
 }
