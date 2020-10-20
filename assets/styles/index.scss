@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
-.container {
+.game-container {
   height: 100vh;
 }
 
@@ -9,11 +9,16 @@
   max-height: calc(100vh - 75px);
   max-width: calc(100vh - 75px);
 
-  // background: url('https://i.imgur.com/G24ElS3.jpg') no-repeat center;
+  background: url('https://i.imgur.com/G24ElS3.jpg') no-repeat center;
   background-size: cover;
 }
 
 .box {
+  // creating column lines
+  border-right: 1px solid black;
+  // creating row lines
+  border-bottom: 1px solid black;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,10 +27,9 @@
 
   background-color: white;
 
-  // creating column lines
-  border-right: 1px solid black;
-  // creating row lines
-  border-bottom: 1px solid black;
+  color: white;
+  font-size: 15vh;
+  text-shadow: 2px 2px rgba(0,0,0, .25);
 
 // gets rid of the far right border of the board.
   &:nth-child(3n) {
@@ -39,5 +43,6 @@
     background-color: LightBlue;
   }
 
+user-select: none;
 
 }

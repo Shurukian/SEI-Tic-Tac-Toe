@@ -5,12 +5,18 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-const events = require('./auth/events')
+const authEvents = require('./auth/events')
+const gameEvents = require('./games/events')
+
 $(() => {
-  $('#sign-up-form').on('submit', events.onSignUp)
-  $('#sign-in-form').on('submit', events.onSignIn)
-  $('#sign-out-form').on('submit', events.onSignOut)
-  $('#change-password-form').on('submit', events.onChangePassword)
-  $('#change-password-form').hide()
+  // all of the authentication events handlers
+  $('#sign-up-form').on('submit', authEvents.onSignUp)
+  $('#sign-in-form').on('submit', authEvents.onSignIn)
+  $('#sign-out-form').on('submit', authEvents.onSignOut)
   $('#sign-out-form').hide()
+  $('#change-password-form').on('submit', authEvents.onChangePassword)
+  $('#change-password-form').hide()
+
+  // all of the game event handlers
+  $('#new-game-form').on('submit', gameEvents.onNewGame)
 })

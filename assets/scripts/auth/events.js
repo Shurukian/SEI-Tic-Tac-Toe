@@ -48,6 +48,19 @@ const onChangePassword = function (event) {
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
+
+const onNewGame = function (event) {
+  event.preventDefault()
+  console.log('New game has triggered!')
+
+  const form = event.target
+  const data = getFormFields(form)
+
+  api.newGame(data)
+    .then(ui.newGameSuccess)
+    .catch(ui.newGameFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
