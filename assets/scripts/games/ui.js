@@ -2,7 +2,7 @@
 const store = require('../store')
 
 const onNewGameSuccess = function (res) {
-  $('#message').text('Let the Game Begin!')
+  $('#message').text('Lets the Game Begin!')
   console.log('play the game!')
   // store the game information to access later
   store.game = res.game

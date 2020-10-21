@@ -3,7 +3,16 @@
 const store = {
   player: null,
   user: {},
-  game: {}
+  game: {},
+  updateGame: {
+    game: {
+      cell: {
+        index: 0,
+        value: 'x'
+      },
+      over: false
+    }
+  }
 }
 
 module.exports = store

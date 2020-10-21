@@ -11,5 +11,3 @@ curl "${API}${URL_PATH}" \
   --data '{}'
 
 echo
-
-# TOKEN="ID-NUMBER-HERE" sh curl-scripts/games/create.sh

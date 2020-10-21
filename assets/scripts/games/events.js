@@ -5,15 +5,16 @@ const api = require('./api')
 
 const onNewGame = function (event) {
   event.preventDefault()
-  console.log('you have started a new game')
+  console.log('New Game event')
+
   const form = event.target
   const data = getFormFields(form)
 
-  api.newGame()
+  api.newGame(data)
     .then(ui.onNewGameSuccess)
     .catch(ui.onNewGameFailure)
 }
 
 module.exports = {
-  onNewGame,
+  onNewGame
 }

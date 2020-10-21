@@ -19,4 +19,6 @@ $(() => {
 
   // all of the game event handlers
   $('#new-game-form').on('submit', gameEvents.onNewGame)
+  $('#new-game-form').hide()
+  $('.get-games').on('submit', gameEvents.onGetGames)
 })

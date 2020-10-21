@@ -65,26 +65,33 @@
 
             </form>
           </section>
+
       </header>
       <section class="game-container">
-        <div id="new-game-form">
+        <form id="new-game-form">
 
-          <input type="submit" value="New Game!">
+          <div id="create-game">
+            <input type="submit" class="main-btn" value="New Game!">
+          </div>
 
           <div class="row h-100 board">
-            <div id="box0" class="col-4 box">0</div>
-            <div id="box1" class="col-4 box">1</div>
-            <div id="box2" class="col-4 box">2</div>
+            <div id="box0" class="col-4 box" data-cell-index="0">0</div>
+            <div id="box1" class="col-4 box" data-cell-index="1">1</div>
+            <div id="box2" class="col-4 box" data-cell-index="2">2</div>
 
-            <div id="box3" class="col-4 box">3</div>
-            <div id="box4" class="col-4 box">4</div>
-            <div id="box5" class="col-4 box">5</div>
+            <div id="box3" class="col-4 box" data-cell-index="3">3</div>
+            <div id="box4" class="col-4 box" data-cell-index="4">4</div>
+            <div id="box5" class="col-4 box" data-cell-index="5">5</div>
 
-            <div id="box6" class="col-4 box">6</div>
-            <div id="box7" class="col-4 box">7</div>
-            <div id="box8" class="col-4 box">8</div>
+            <div id="box6" class="col-4 box" data-cell-index="6">6</div>
+            <div id="box7" class="col-4 box" data-cell-index="7">7</div>
+            <div id="box8" class="col-4 box" data-cell-index="8">8</div>
           </div>
-        </div>
+
+        </form>
+        <form id="get-games">
+          <input type="submit" class="info-btn" value="Previous Games">
+        </form>
       </section>
 
     </body>

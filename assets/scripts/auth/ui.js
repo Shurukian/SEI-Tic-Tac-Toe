@@ -14,6 +14,7 @@ const signInSuccess = function (res) {
   $('#sign-out-form').show()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
+  $('#new-game-form').show()
 }
 const signInFailure = function (err) {
   $('#message').text('Your sign in has failed, Please try again.')
@@ -25,6 +26,7 @@ const signOutSuccess = function (res) {
   $('#sign-out-form').hide()
   $('#sign-up-form').show()
   $('#sign-in-form').show()
+  $('#new-game-form').hide()
   $('#form').trigger('reset')
 
 }

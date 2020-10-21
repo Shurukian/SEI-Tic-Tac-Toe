@@ -8,7 +8,10 @@ const newGame = function (event) {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
-    data: data
+    headers: {
+      Authorization: `Bearer ${store.user.token}`
+    },
+    data: {}
   })
 }
 
