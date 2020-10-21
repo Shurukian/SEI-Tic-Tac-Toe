@@ -15,6 +15,18 @@ const onNewGame = function (event) {
     .catch(ui.onNewGameFailure)
 }
 
+// const onGetGame = function (event) {
+//   event.preventDefault()
+//   console.log('Get Game event firing')
+//
+//   const form = event.target
+//   const data = getFormFields(form)
+//
+//   api.getGames(data)
+//   .then(ui.onGetGamesSuccess)
+//   .catch(ui.onGetGamesFailure)
+// }
+
 module.exports = {
   onNewGame
 }

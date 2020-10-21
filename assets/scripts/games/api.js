@@ -15,6 +15,18 @@ const newGame = function (event) {
   })
 }
 
+// const getGames = function (event) {
+//   console.log('Getting the game')
+//
+//   return $.ajax({
+//     url: config.apiUrl + '/games',
+//     method: 'GET',
+//     headers: {
+//       Authorization: `Bearer ${store.user.token}`
+//     }
+//   })
+// }
 module.exports = {
-  newGame
+  newGame,
+  // getGames
 }

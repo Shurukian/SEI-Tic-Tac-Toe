@@ -9,16 +9,18 @@ const authEvents = require('./auth/events')
 const gameEvents = require('./games/events')
 
 $(() => {
+  // hidden buttons to clean it up
+  $('#sign-out-form').hide()
+  $('#change-password-form').hide()
+  $('#new-game-form').hide()
+
   // all of the authentication events handlers
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#sign-out-form').on('submit', authEvents.onSignOut)
-  $('#sign-out-form').hide()
   $('#change-password-form').on('submit', authEvents.onChangePassword)
-  $('#change-password-form').hide()
 
   // all of the game event handlers
   $('#new-game-form').on('submit', gameEvents.onNewGame)
-  $('#new-game-form').hide()
   $('.get-games').on('submit', gameEvents.onGetGames)
 })
