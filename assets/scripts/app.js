@@ -13,6 +13,7 @@ $(() => {
   $('#sign-out-form').hide()
   $('#change-password-form').hide()
   $('#new-game-form').hide()
+  $('#get-games').hide()
 
   // all of the authentication events handlers
   $('#sign-up-form').on('submit', authEvents.onSignUp)
@@ -22,5 +23,16 @@ $(() => {
 
   // all of the game event handlers
   $('#new-game-form').on('submit', gameEvents.onNewGame)
-  $('.get-games').on('submit', gameEvents.onGetGames)
+  $('#get-games').on('submit', gameEvents.onGetGames)
+
+  // all of the event listeners for the game board
+  $('#box0').on('click', gameEvents.box0)
+  // $('#box1').on('click', gameEvents.box1)
+  // $('#box2').on('click', gameEvents.box2)
+  // $('#box3').on('click', gameEvents.box3)
+  // $('#box4').on('click', gameEvents.box4)
+  // $('#box5').on('click', gameEvents.box5)
+  // $('#box6').on('click', gameEvents.box6)
+  // $('#box7').on('click', gameEvents.box7)
+  // $('#box8').on('click', gameEvents.box8)
 })
