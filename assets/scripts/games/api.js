@@ -15,12 +15,24 @@ const newGame = function (event) {
   })
 }
 
-const gameboard = function (event) {
+const playGames = function (data) {
   console.log('The game is being played')
 
   return $.ajax({
     url: config.apiUrl + '/games',
-    method: 'PATCH'
+    method: 'PATCH',
+    headers: {
+      Authorization: `Bearer ${store.user.token}`
+    },
+    data: {
+      game: {
+        cell: {
+          index: formData,
+          value: 'X'
+        },
+        over: false
+      }
+    }
   })
 }
 // const getGames = function () {

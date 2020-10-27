@@ -33,10 +33,12 @@ const winCondition = [
   [2, 4, 6]
 ]
 
+let winner = winCondition.length === true
+
 // function to show the variable change between players.
-// const changePlayer = function () {
-//   playerX = !playerO
-// }
+const changePlayer = function () {
+ currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
+}
 
 // we want to have the ability to select all of the data-cell-index divs
 // I was able to find how to target the cells in an Array easier at the link
@@ -59,7 +61,7 @@ dataCells.forEach(cell => {
 function cellClick (event) {
   console.log('clicked')
   const cell = event.target
-  const changePlayer = playerX ? playerO : playerX
+  // const changePlayer = playerX ? playerO : playerX
 
 // takeTurn is a fuction for the currentPlayer (playerX or playerO) to be able
 // to make a move on the board.
