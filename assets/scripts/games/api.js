@@ -15,7 +15,15 @@ const newGame = function (event) {
   })
 }
 
-// const getGames = function (event) {
+const gameboard = function (event) {
+  console.log('The game is being played')
+
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'PATCH'
+  })
+}
+// const getGames = function () {
 //   console.log('Getting the game')
 //
 //   return $.ajax({

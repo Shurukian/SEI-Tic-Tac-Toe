@@ -26,7 +26,7 @@ $(() => {
   $('#get-games').on('submit', gameEvents.onGetGames)
 
   // all of the event listeners for the game board
-  $('#box0').on('click', gameEvents.dataCells)
+  $('#gameboard').on('click', gameEvents.playGames)
   // $('#box1').on('click', gameEvents.box1)
   // $('#box2').on('click', gameEvents.box2)
   // $('#box3').on('click', gameEvents.box3)
