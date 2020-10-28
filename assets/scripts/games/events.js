@@ -11,7 +11,18 @@ const onNewGame = function (event) {
 
   api.newGame(data)
     .then(ui.onNewGameSuccess)
-    .catch(ui.onNewGameFailure)
+    .catch(ui.onError)
+}
+
+const onUpdateGame = function (formData) {
+  event.preventDefault()
+
+  const form = event.target
+  const data = getFormFields(form)
+
+  api.update(formData)
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onError)
 }
 
 // need variables for the players for the game
@@ -86,5 +97,6 @@ function cellClick (event) {
 // }
 
 module.exports = {
-  onNewGame
+  onNewGame,
+  onUpdateGame
 }

@@ -1,6 +1,9 @@
 'use strict'
 const store = require('../store')
 
+$('#game-display').html('')
+
+
 const onNewGameSuccess = function (res) {
   $('#message').text('Lets the Game Begin!')
   console.log('play the game!')
@@ -8,10 +11,14 @@ const onNewGameSuccess = function (res) {
   store.game = res.game
   // store the player information to know who played the game
   store.player = null
+
+  $('form').trigger('reset')
 }
 
-const onNewGameFailure = function (err) {
-  $('#message').text('Your New Game is not ready, Please try again.')
+const onError = function () {
+  $('#error-message').text('An error has occured, Please try again.')
+
+  $('form').trigger('reset')
 }
 
 // const onGetGamesSuccess = function (res) {
@@ -26,7 +33,7 @@ const onNewGameFailure = function (err) {
 
 module.exports = {
   onNewGameSuccess,
-  onNewGameFailure
+  onError
   // onGetGamesSuccess,
   // onGetGamesFailure
 }

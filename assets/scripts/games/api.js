@@ -15,7 +15,7 @@ const newGame = function (event) {
   })
 }
 
-const playGames = function (data) {
+const updateGame = function (data) {
   console.log('The game is being played')
 
   return $.ajax({
@@ -48,5 +48,6 @@ const playGames = function (data) {
 // }
 module.exports = {
   newGame,
+  updateGame
   // getGames
 }
