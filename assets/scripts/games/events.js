@@ -2,9 +2,10 @@
 
 const ui = require('./ui')
 const api = require('./api')
+const store = require('../store')
 
-let gameData = ['', '', '', '', '', '', '', '', '']
-let currentPlayer = 'x'
+const gameData = ['', '', '', '', '', '', '', '', '']
+let currentPlayer = 'X'
 let over = false
 
 const onNewGame = function (event) {
@@ -20,13 +21,18 @@ const onNewGame = function (event) {
 
 const onUpdateGame = function (event) {
   event.preventDefault()
-
+  // when you click it will update the data in the game data array
   const cellIndex = event.target.id
   $(event.target).text(currentPlayer)
 
   gameData[cellIndex] = currentPlayer
   console.log(gameData)
 
+  checkWinner()
+  // cellClick()
+  // everytime the data is passed into the gamedata array check for winner
+
+  // passes the data playGames
   const data = {
     game: {
       cell: {
@@ -37,13 +43,24 @@ const onUpdateGame = function (event) {
     }
   }
 
+  // change the player after
+  currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
+  // sends the data to the api
   api.updateGame(data)
     .then(ui.onUpdateGameSuccess)
     .catch(ui.onError)
 }
 
 // arrays for the win conditions of the games
-// const winCondition = [
+const checkWinner = () => {
+  if (gameData[0] !== '' && gameData[0] === gameData[1] && gameData[0] === gameData[2]) {
+    $('#message').text(currentPlayer + 'is the winner!')
+    over = true
+    console.log('WINNNER')
+  }
+}
+
+// [
 // // horizontal cells
 //   [0, 1, 2],
 //   [3, 4, 5],
@@ -58,6 +75,17 @@ const onUpdateGame = function (event) {
 // ]
 
 // function to show the variable change between players.
+
+// let result = true;
+//
+// for (let i = 0; i < checkWinner.length; i++) {
+//   if (checkWinner[i] <= 0) {
+//     result = false
+//   } else {
+//     console.log('Value is the winner')
+//   }
+// }
+
 
 // we want to have the ability to select all of the data-cell-index divs
 // I was able to find how to target the cells in an Array easier at the link
@@ -80,7 +108,7 @@ function cellClick (event) {
   console.log('clicked')
   const cell = $(event.target)
   cell.css('background', 'transparent').text(currentPlayer)
-  currentPlayer = currentPlayer === 'O' ? 'x' : 'O'
+
 }
 
 module.exports = {
