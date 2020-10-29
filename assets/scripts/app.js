@@ -22,17 +22,9 @@ $(() => {
   $('#change-password-form').on('submit', authEvents.onChangePassword)
 
   // all of the game event handlers
-  $('#new-game-form').on('submit', gameEvents.onNewGame)
-  $('#get-games').on('submit', gameEvents.onGetGames)
+  $('#new-games').on('click', gameEvents.onNewGame)
+  // $('#get-games').on('submit', gameEvents.onGetGames)
 
   // all of the event listeners for the game board
   $('#gameboard').on('click', gameEvents.onUpdateGame)
-  // $('#box1').on('click', gameEvents.box1)
-  // $('#box2').on('click', gameEvents.box2)
-  // $('#box3').on('click', gameEvents.box3)
-  // $('#box4').on('click', gameEvents.box4)
-  // $('#box5').on('click', gameEvents.box5)
-  // $('#box6').on('click', gameEvents.box6)
-  // $('#box7').on('click', gameEvents.box7)
-  // $('#box8').on('click', gameEvents.box8)
 })

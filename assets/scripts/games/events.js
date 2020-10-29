@@ -1,55 +1,63 @@
 'use strict'
-const getFormFields = require('./../../../lib/get-form-fields.js')
+
 const ui = require('./ui')
 const api = require('./api')
+
+let gameData = ['', '', '', '', '', '', '', '', '']
+let currentPlayer = 'x'
+let over = false
 
 const onNewGame = function (event) {
   event.preventDefault()
 
-  const form = event.target
-  const data = getFormFields(form)
+  // const form = event.target
+  // const data = getFormFields(form)
 
-  api.newGame(data)
+  api.newGame()
     .then(ui.onNewGameSuccess)
     .catch(ui.onError)
 }
 
-const onUpdateGame = function (formData) {
+const onUpdateGame = function (event) {
   event.preventDefault()
 
-  const form = event.target
-  const data = getFormFields(form)
+  const cellIndex = event.target.id
+  $(event.target).text(currentPlayer)
 
-  api.update(formData)
+  gameData[cellIndex] = currentPlayer
+  console.log(gameData)
+
+  const data = {
+    game: {
+      cell: {
+        index: cellIndex,
+        value: currentPlayer
+      },
+      over: over
+    }
+  }
+
+  api.updateGame(data)
     .then(ui.onUpdateGameSuccess)
     .catch(ui.onError)
 }
 
-// need variables for the players for the game
-const playerX = 'X'
-const playerO = 'O'
-
 // arrays for the win conditions of the games
-const winCondition = [
-// horizontal cells
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  // vertical cells
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  // diagonal cells
-  [0, 4, 8],
-  [2, 4, 6]
-]
-
-let winner = winCondition.length === true
+// const winCondition = [
+// // horizontal cells
+//   [0, 1, 2],
+//   [3, 4, 5],
+//   [6, 7, 8],
+//   // vertical cells
+//   [0, 3, 6],
+//   [1, 4, 7],
+//   [2, 5, 8],
+//   // diagonal cells
+//   [0, 4, 8],
+//   [2, 4, 6]
+// ]
 
 // function to show the variable change between players.
-const changePlayer = function () {
- currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
-}
 
 // we want to have the ability to select all of the data-cell-index divs
 // I was able to find how to target the cells in an Array easier at the link
@@ -62,7 +70,6 @@ const dataCells = document.querySelectorAll('[data-cell-index]')
 // a click to happen on the dataCells variable one time. Found this on StackOverFlow :
 // https://stackoverflow.com/questions/38781349/how-to-make-onclick-event-to-work-only-once
 dataCells.forEach(cell => {
-  // I am very proud of this piece of code!
   cell.addEventListener('click', cellClick, { once: true })
 })
 
@@ -71,30 +78,10 @@ dataCells.forEach(cell => {
 // Determine whether there is a win, loss or draw
 function cellClick (event) {
   console.log('clicked')
-  const cell = event.target
-  // const changePlayer = playerX ? playerO : playerX
-
-// takeTurn is a fuction for the currentPlayer (playerX or playerO) to be able
-// to make a move on the board.
-  // takeTurn(cell, changePlayer)
-  // changePlayer()
+  const cell = $(event.target)
+  cell.css('background', 'transparent').text(currentPlayer)
+  currentPlayer = currentPlayer === 'O' ? 'x' : 'O'
 }
-
-// const takeTurn = function (cell, changePlayer) {
-//   cell.playerList.add(changePlayer)
-// }
-
-// const onGetGame = function (event) {
-//   event.preventDefault()
-//   console.log('Get Game event firing')
-//
-//   const form = event.target
-//   const data = getFormFields(form)
-//
-//   api.getGames(data)
-//   .then(ui.onGetGamesSuccess)
-//   .catch(ui.onGetGamesFailure)
-// }
 
 module.exports = {
   onNewGame,

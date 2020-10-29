@@ -3,16 +3,18 @@ const store = require('../store')
 
 $('#game-display').html('')
 
-
 const onNewGameSuccess = function (res) {
-  $('#message').text('Lets the Game Begin!')
+  $('#message').text('Let the Game Begin!')
   console.log('play the game!')
   // store the game information to access later
   store.game = res.game
-  // store the player information to know who played the game
-  store.player = null
 
-  $('form').trigger('reset')
+  // $('form').trigger('reset')
+}
+
+const onUpdateGameSuccess = function (res) {
+  console.log(res)
+  console.log('The game is being played')
 }
 
 const onError = function () {
@@ -33,6 +35,7 @@ const onError = function () {
 
 module.exports = {
   onNewGameSuccess,
+  onUpdateGameSuccess,
   onError
   // onGetGamesSuccess,
   // onGetGamesFailure

@@ -2,37 +2,25 @@
 const config = require('./../config')
 const store = require('../store')
 
-const newGame = function (event) {
-  console.log('a new game has been started')
-
+const newGame = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${store.user.token}`
+      Authorization: 'Bearer ' + store.user.token
     },
     data: {}
   })
 }
 
 const updateGame = function (data) {
-  console.log('The game is being played')
-
   return $.ajax({
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
     headers: {
-      Authorization: `Bearer ${store.user.token}`
+      Authorization: 'Bearer ' + store.user.token
     },
-    data: {
-      game: {
-        cell: {
-          index: formData,
-          value: 'X'
-        },
-        over: false
-      }
-    }
+    data: data
   })
 }
 // const getGames = function () {
