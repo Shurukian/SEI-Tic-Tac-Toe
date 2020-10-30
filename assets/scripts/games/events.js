@@ -2,11 +2,17 @@
 
 const ui = require('./ui')
 const api = require('./api')
-const store = require('../store')
+// const store = require('../store')
 
 const gameData = ['', '', '', '', '', '', '', '', '']
 let currentPlayer = 'X'
 let over = false
+
+// function cellClick (event) {
+//   console.log('clicked')
+//   const cell = $(event.target)
+//   cell.css('background', 'transparent').text(currentPlayer)
+// }
 
 const onNewGame = function (event) {
   event.preventDefault()
@@ -53,10 +59,33 @@ const onUpdateGame = function (event) {
 
 // arrays for the win conditions of the games
 const checkWinner = () => {
-  if (gameData[0] !== '' && gameData[0] === gameData[1] && gameData[0] === gameData[2]) {
-    $('#message').text(currentPlayer + 'is the winner!')
+  // rows of winners
+  if (gameData[0] !== '' && gameData[0] === gameData[1] && gameData[1] === gameData[2]) {
+    $('#Game-Message').text(currentPlayer + ' is the winner!')
     over = true
-    console.log('WINNNER')
+  } else if (gameData[3] !== '' && gameData[3] === gameData[4] && gameData[4] === gameData[5]) {
+    $('#Game-Message').text(currentPlayer + ' is the winner!')
+    over = true
+  } else if (gameData[6] !== '' && gameData[6] === gameData[7] && gameData[7] === gameData[8]) {
+    $('#Game-Message').text(currentPlayer + ' is the winner!')
+    over = true
+    // columns of winners
+  } else if (gameData[0] !== '' && gameData[0] === gameData[3] && gameData[3] === gameData[6]) {
+    $('#Game-Message').text(currentPlayer + ' is the winner!')
+    over = true
+  } else if (gameData[1] !== '' && gameData[1] === gameData[4] && gameData[4] === gameData[7]) {
+    $('#Game-Message').text(currentPlayer + ' is the winner!')
+    over = true
+  } else if (gameData[2] !== '' && gameData[2] === gameData[5] && gameData[5] === gameData[8]) {
+    $('#Game-Message').text(currentPlayer + ' is the winner!')
+    over = true
+    // diagonal winners
+  } else if (gameData[0] !== '' && gameData[0] === gameData[4] && gameData[4] === gameData[8]) {
+    $('#Game-Message').text(currentPlayer + ' is the winner!')
+    over = true
+  } else if (gameData[2] !== '' && gameData[2] === gameData[4] && gameData[4] === gameData[6]) {
+    $('#Game-Message').text(currentPlayer + ' is the winner!')
+    over = true
   }
 }
 
@@ -86,30 +115,23 @@ const checkWinner = () => {
 //   }
 // }
 
-
 // we want to have the ability to select all of the data-cell-index divs
 // I was able to find how to target the cells in an Array easier at the link
 // https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
-const dataCells = document.querySelectorAll('[data-cell-index]')
+// const dataCells = document.querySelectorAll('[data-cell-index]')
 
 // selector to click on the box and make it an X or an O
 // need to be able to loop through all of the cells to play the game
 // This will access all of the boxes in the array for the game board and allow
 // a click to happen on the dataCells variable one time. Found this on StackOverFlow :
 // https://stackoverflow.com/questions/38781349/how-to-make-onclick-event-to-work-only-once
-dataCells.forEach(cell => {
-  cell.addEventListener('click', cellClick, { once: true })
-})
+// dataCells.forEach(cell => {
+//   cell.addEventListener('click', cellClick, { once: true })
+// })
 
 // ability to make a move on the board
 // ability to switch between turns for X and O
 // Determine whether there is a win, loss or draw
-function cellClick (event) {
-  console.log('clicked')
-  const cell = $(event.target)
-  cell.css('background', 'transparent').text(currentPlayer)
-
-}
 
 module.exports = {
   onNewGame,
