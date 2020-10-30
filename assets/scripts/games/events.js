@@ -4,18 +4,19 @@ const ui = require('./ui')
 const api = require('./api')
 // const store = require('../store')
 
-const gameData = ['', '', '', '', '', '', '', '', '']
+let gameData = ['', '', '', '', '', '', '', '', '']
 let currentPlayer = 'X'
 let over = false
 
 // function cellClick (event) {
-//   console.log('clicked')
 //   const cell = $(event.target)
 //   cell.css('background', 'transparent').text(currentPlayer)
 // }
 
 const onNewGame = function (event) {
   event.preventDefault()
+  $('#gameboard').show()
+  // $('#gameboard').text('')
 
   // const form = event.target
   // const data = getFormFields(form)
@@ -32,7 +33,6 @@ const onUpdateGame = function (event) {
   $(event.target).text(currentPlayer)
 
   gameData[cellIndex] = currentPlayer
-  console.log(gameData)
 
   checkWinner()
   // cellClick()
@@ -61,32 +61,38 @@ const onUpdateGame = function (event) {
 const checkWinner = () => {
   // rows of winners
   if (gameData[0] !== '' && gameData[0] === gameData[1] && gameData[1] === gameData[2]) {
-    $('#Game-Message').text(currentPlayer + ' is the winner!')
     over = true
   } else if (gameData[3] !== '' && gameData[3] === gameData[4] && gameData[4] === gameData[5]) {
-    $('#Game-Message').text(currentPlayer + ' is the winner!')
     over = true
   } else if (gameData[6] !== '' && gameData[6] === gameData[7] && gameData[7] === gameData[8]) {
-    $('#Game-Message').text(currentPlayer + ' is the winner!')
     over = true
     // columns of winners
   } else if (gameData[0] !== '' && gameData[0] === gameData[3] && gameData[3] === gameData[6]) {
-    $('#Game-Message').text(currentPlayer + ' is the winner!')
     over = true
   } else if (gameData[1] !== '' && gameData[1] === gameData[4] && gameData[4] === gameData[7]) {
-    $('#Game-Message').text(currentPlayer + ' is the winner!')
     over = true
   } else if (gameData[2] !== '' && gameData[2] === gameData[5] && gameData[5] === gameData[8]) {
-    $('#Game-Message').text(currentPlayer + ' is the winner!')
     over = true
     // diagonal winners
   } else if (gameData[0] !== '' && gameData[0] === gameData[4] && gameData[4] === gameData[8]) {
-    $('#Game-Message').text(currentPlayer + ' is the winner!')
     over = true
   } else if (gameData[2] !== '' && gameData[2] === gameData[4] && gameData[4] === gameData[6]) {
-    $('#Game-Message').text(currentPlayer + ' is the winner!')
     over = true
+  } if (over === true) {
+    $('#Game-Message').html(`
+    <h2>${currentPlayer} is the winner!</h2>
+    `)
+    $('#gameboard').hide()
   }
+
+  // for (x = 0; x < gameData.length; x++) {
+  //   for (o = 0; o < gameData.length; o++) {
+  //     if (gameData[x][o] === '') {
+  //       return false
+  //     }
+  //   }
+  //   return true
+  // }
 }
 
 // [

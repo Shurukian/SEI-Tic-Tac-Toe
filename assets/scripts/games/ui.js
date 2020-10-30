@@ -5,7 +5,7 @@ $('#game-display').html('')
 
 const onNewGameSuccess = function (res) {
   $('#message').text('Let the Game Begin!')
-  console.log('play the game!')
+
   // store the game information to access later
   store.game = res.game
 
@@ -13,8 +13,7 @@ const onNewGameSuccess = function (res) {
 }
 
 const onUpdateGameSuccess = function (res) {
-  console.log(res)
-  console.log('The game is being played')
+
 }
 
 const onError = function () {

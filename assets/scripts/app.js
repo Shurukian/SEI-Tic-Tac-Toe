@@ -14,6 +14,7 @@ $(() => {
   $('#change-password-form').hide()
   $('#new-game-form').hide()
   $('#get-games').hide()
+  $('#gameboard').hide()
 
   // all of the authentication events handlers
   $('#sign-up-form').on('submit', authEvents.onSignUp)
