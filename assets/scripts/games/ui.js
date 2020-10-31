@@ -5,18 +5,16 @@ $('#game-display').html('')
 
 const onNewGameSuccess = function (res) {
   $('#message').html('Let the Game Begin!')
-
+  $('#gameboard').show()
+  $('#Game-Message').hide()
   // store the game information to access later
   store.game = res.game
   // this resets the text in the boxes
   $('.box').text('')
-
   // $('form').trigger('reset')
 }
 
-const onUpdateGameSuccess = function (res) {
-  console.log(res)
-}
+const onUpdateGameSuccess = function (res) {}
 
 const onError = function () {
   $('#error-message').text('An error has occured, Please try again.')

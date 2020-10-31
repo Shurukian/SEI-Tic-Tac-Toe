@@ -16,10 +16,6 @@ let over = false
 
 const onNewGame = function (event) {
   event.preventDefault()
-  $('#gameboard').show()
-  $('#Game-Message').hide()
-  // const form = event.target
-  // const data = getFormFields(form)
 
   api.newGame()
     .then(ui.onNewGameSuccess)
@@ -34,31 +30,33 @@ const onUpdateGame = function (event) {
   event.preventDefault()
   // when you click it will update the data in the game data array
   const cellIndex = event.target.id
-  $(event.target).text(currentPlayer)
-  console.log()
 
-  gameData[cellIndex] = currentPlayer
+  if ($(event.target).text() === '') {
+    $(event.target).text(currentPlayer)
 
-  // everytime the data is passed into the gamedata array check for winner
-  checkWinner()
+    gameData[cellIndex] = currentPlayer
 
-  // passes the data playGames
-  const data = {
-    game: {
-      cell: {
-        index: cellIndex,
-        value: currentPlayer
-      },
-      over: over
+    // everytime the data is passed into the gamedata array check for winner
+    checkWinner()
+
+    // passes the data playGames
+    const data = {
+      game: {
+        cell: {
+          index: cellIndex,
+          value: currentPlayer
+        },
+        over: over
+      }
     }
-  }
 
-  // change the player after
-  currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
-  // sends the data to the api
-  api.updateGame(data)
-    .then(ui.onUpdateGameSuccess)
-    .catch(ui.onError)
+    // change the player after
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
+    // sends the data to the api
+    api.updateGame(data)
+      .then(ui.onUpdateGameSuccess)
+      .catch(ui.onError)
+  }
 }
 
 // arrays for the win conditions of the games
