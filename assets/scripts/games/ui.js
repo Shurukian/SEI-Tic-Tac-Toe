@@ -8,6 +8,7 @@ const onNewGameSuccess = function (res) {
 
   // store the game information to access later
   store.game = res.game
+  // this resets the text in the boxes
   $('.box').text('')
 
   // $('form').trigger('reset')
