@@ -23,19 +23,19 @@ const updateGame = function (data) {
     data: data
   })
 }
-// const getGames = function () {
-//   console.log('Getting the game')
-//
-//   return $.ajax({
-//     url: config.apiUrl + '/games',
-//     method: 'GET',
-//     headers: {
-//       Authorization: `Bearer ${store.user.token}`
-//     }
-//   })
-// }
+const getGames = function () {
+  console.log('Getting the game')
+
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${store.user.token}`
+    }
+  })
+}
 module.exports = {
   newGame,
-  updateGame
-  // getGames
+  updateGame,
+  getGames
 }

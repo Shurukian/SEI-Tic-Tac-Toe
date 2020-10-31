@@ -16,25 +16,26 @@ const onNewGameSuccess = function (res) {
 
 const onUpdateGameSuccess = function (res) {}
 
+const onGetGamesSuccess = function (res) {
+  const games = res.games
+  $('#message').html(`
+    <h2>${games.length} times have been played!</h2>
+    `)
+
+  store.game = res.game
+  store.player = null
+}
+
 const onError = function () {
   $('#error-message').text('An error has occured, Please try again.')
 
   $('form').trigger('reset')
 }
 
-// const onGetGamesSuccess = function (res) {
-//   $('#message').text('Got the game Successfully!')
-//
-//   store.game = res.game
-//   store.player = null
-// }
-
-// const onGetGamesFailure = function (err) {
-//   $('#message').text('Unable to the GET game data')
-
 module.exports = {
   onNewGameSuccess,
   onUpdateGameSuccess,
+  onGetGamesSuccess,
   onError
   // onGetGamesSuccess,
   // onGetGamesFailure

@@ -128,21 +128,13 @@ const checkWinner = () => {
     <h2>The Game is a Tie!</h2>
     `)
   }
-  // if (over === true) {
-  //   $('#Game-Message').show()
-  //   $('#Game-Message').html(`
-  //   <h2>${currentPlayer} is the winner!</h2>
-  //   `)
-  // }
+}
 
-  // for (x = 0; x < gameData.length; x++) {
-  //   for (o = 0; o < gameData.length; o++) {
-  //     if (gameData[x][o] === '') {
-  //       return false
-  //     }
-  //   }
-  //   return true
-  // }
+const onGetGames = function () {
+  event.preventDefault()
+  api.getGames()
+    .then(ui.onGetGamesSuccess)
+    .catch(ui.onError)
 }
 
 // // horizontal cells
@@ -179,5 +171,6 @@ const checkWinner = () => {
 
 module.exports = {
   onNewGame,
-  onUpdateGame
+  onUpdateGame,
+  onGetGames
 }

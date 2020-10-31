@@ -24,7 +24,7 @@ $(() => {
 
   // all of the game event handlers
   $('#new-games').on('click', gameEvents.onNewGame)
-  // $('#get-games').on('submit', gameEvents.onGetGames)
+  $('#get-games').on('submit', gameEvents.onGetGames)
 
   // all of the event listeners for the game board
   $('#gameboard').on('click', gameEvents.onUpdateGame)
