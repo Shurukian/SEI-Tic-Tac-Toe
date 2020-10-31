@@ -16,8 +16,21 @@ let over = false
 const onNewGame = function (event) {
   event.preventDefault()
   $('#gameboard').show()
-  // $('#gameboard').text('')
+  $('#Game-Message').hide()
 
+  over = false
+  currentPlayer = 'X'
+
+  gameData = ['', '', '', '', '', '', '', '', '']
+
+  // const reset = (res) => {
+  //   if (gameData !== []) {
+  //     gameData = []
+  //     over = false
+  //   }
+  // }
+  //
+  // reset()
   // const form = event.target
   // const data = getFormFields(form)
 
@@ -34,9 +47,10 @@ const onUpdateGame = function (event) {
 
   gameData[cellIndex] = currentPlayer
 
-  checkWinner()
-  // cellClick()
+  console.log(gameData)
+
   // everytime the data is passed into the gamedata array check for winner
+  checkWinner()
 
   // passes the data playGames
   const data = {
@@ -79,10 +93,11 @@ const checkWinner = () => {
   } else if (gameData[2] !== '' && gameData[2] === gameData[4] && gameData[4] === gameData[6]) {
     over = true
   } if (over === true) {
+    $('#Game-Message').show()
     $('#Game-Message').html(`
     <h2>${currentPlayer} is the winner!</h2>
     `)
-    $('#gameboard').hide()
+    // $('#gameboard').hide()
   }
 
   // for (x = 0; x < gameData.length; x++) {
@@ -110,16 +125,6 @@ const checkWinner = () => {
 // ]
 
 // function to show the variable change between players.
-
-// let result = true;
-//
-// for (let i = 0; i < checkWinner.length; i++) {
-//   if (checkWinner[i] <= 0) {
-//     result = false
-//   } else {
-//     console.log('Value is the winner')
-//   }
-// }
 
 // we want to have the ability to select all of the data-cell-index divs
 // I was able to find how to target the cells in an Array easier at the link

@@ -12,7 +12,7 @@ curl "${API}${URL_PATH}" \
     "game":{
       "cell":{
           "index": "'"${INDEX}"'",
-          "values": "'"${value}"'"
+          "value": "'"${value}"'"
       },
       "over": "'"${OVER}"'"
     }

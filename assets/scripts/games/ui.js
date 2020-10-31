@@ -4,16 +4,17 @@ const store = require('../store')
 $('#game-display').html('')
 
 const onNewGameSuccess = function (res) {
-  $('#message').text('Let the Game Begin!')
+  $('#message').html('Let the Game Begin!')
 
   // store the game information to access later
   store.game = res.game
+  $('.box').text('')
 
   // $('form').trigger('reset')
 }
 
 const onUpdateGameSuccess = function (res) {
-
+  console.log(res)
 }
 
 const onError = function () {
