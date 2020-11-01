@@ -1,10 +1,10 @@
 'use strict'
-const store = require ('../store')
+const store = require('../store')
 
 const signUpSuccess = function (res) {
   $('#message').text('Thanks for signing up ' + res.user.email)
 }
-const signUpFailure = function (err) {
+const signUpFailure = function () {
   $('#message').text('Your sign up failed, try again')
 }
 const signInSuccess = function (res) {
@@ -14,31 +14,29 @@ const signInSuccess = function (res) {
   $('#sign-out-form').show()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
-  $('#new-game-form').show()
+  $('#create-game').show()
   $('#get-games').show()
 }
-const signInFailure = function (err) {
+const signInFailure = function () {
   $('#message').text('Your sign in has failed, Please try again.')
 }
 const signOutSuccess = function (res) {
   $('#message').text('We hope to see you back soon!')
-  store.user = null
   $('#change-password-form').hide()
   $('#sign-out-form').hide()
   $('#sign-up-form').show()
   $('#sign-in-form').show()
-  $('#new-game-form').hide()
+  $('#create-game').hide()
   $('#get-games').hide()
   $('#form').trigger('reset')
-
 }
-const signOutFailure = function (err) {
+const signOutFailure = function () {
   $('#message').text('Your sign out has failed, Please try again.')
 }
 const changePasswordSuccess = function (res) {
   $('#message').text('You have successfully changed your password!')
 }
-const changePasswordFailure = function (err) {
+const changePasswordFailure = function () {
   $('#message').text('Your password change has failed, Please try again.')
 }
 

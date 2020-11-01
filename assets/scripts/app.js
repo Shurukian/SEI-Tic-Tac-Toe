@@ -12,7 +12,7 @@ $(() => {
   // hidden buttons to clean it up
   $('#sign-out-form').hide()
   $('#change-password-form').hide()
-  $('#new-game-form').hide()
+  $('#create-game').hide()
   $('#get-games').hide()
   $('#gameboard').hide()
 
@@ -23,7 +23,7 @@ $(() => {
   $('#change-password-form').on('submit', authEvents.onChangePassword)
 
   // all of the game event handlers
-  $('#new-games').on('click', gameEvents.onNewGame)
+  $('#create-game').on('click', gameEvents.onNewGame)
   $('#get-games').on('submit', gameEvents.onGetGames)
 
   // all of the event listeners for the game board
