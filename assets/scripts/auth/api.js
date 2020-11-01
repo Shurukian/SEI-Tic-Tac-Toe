@@ -28,7 +28,6 @@ const signOut = function () {
   })
 }
 const changePassword = function (data) {
-  console.log('password is going to change')
   return $.ajax({
     url: config.apiUrl + '/change-password',
     headers: {

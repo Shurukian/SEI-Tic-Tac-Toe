@@ -10,7 +10,6 @@ let over = false
 
 // function cellClick (event) {
 //   const cell = $(event.target)
-//   console.log('clicked')
 //   cell.css('background', 'transparent').text(currentPlayer)
 // }
 

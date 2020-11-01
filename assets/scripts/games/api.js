@@ -24,7 +24,6 @@ const updateGame = function (data) {
   })
 }
 const getGames = function () {
-  console.log('Getting the game')
 
   return $.ajax({
     url: config.apiUrl + '/games',
