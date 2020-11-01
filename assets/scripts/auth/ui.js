@@ -3,6 +3,7 @@ const store = require('../store')
 
 const signUpSuccess = function (res) {
   $('#message').text('Thanks for signing up ' + res.user.email)
+  $('#sign-up-form').trigger('reset')
 }
 const signUpFailure = function () {
   $('#message').text('Your sign up failed, try again')
@@ -16,6 +17,7 @@ const signInSuccess = function (res) {
   $('#sign-in-form').hide()
   $('#create-game').show()
   $('#get-games').show()
+  $('#sign-in-form').trigger('reset')
 }
 const signInFailure = function () {
   $('#message').text('Your sign in has failed, Please try again.')
@@ -28,6 +30,7 @@ const signOutSuccess = function (res) {
   $('#sign-in-form').show()
   $('#create-game').hide()
   $('#get-games').hide()
+  $('#gameboard').hide()
   $('#form').trigger('reset')
 }
 const signOutFailure = function () {
@@ -35,6 +38,7 @@ const signOutFailure = function () {
 }
 const changePasswordSuccess = function (res) {
   $('#message').text('You have successfully changed your password!')
+  $('#change-password-form').trigger('reset')
 }
 const changePasswordFailure = function () {
   $('#message').text('Your password change has failed, Please try again.')
