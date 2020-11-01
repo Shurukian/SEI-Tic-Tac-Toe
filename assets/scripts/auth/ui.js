@@ -31,6 +31,7 @@ const signOutSuccess = function (res) {
   $('#create-game').hide()
   $('#get-games').hide()
   $('#gameboard').hide()
+  $('#Game-Message').hide()
   $('#form').trigger('reset')
 }
 const signOutFailure = function () {
