@@ -1,12 +1,39 @@
-`As an SEI student I want to create multiple programs so that I can build a successful career outside of the classroom.`
-`As a developer I want to make sure that the website is navigable without issue so that I will be able to focus on getting the game working properly.`
-`As a developer I want to make sure that the sign in and sign out buttons toggle properly for the opposite action so that I am able to keep the UI clean.`
-`As a developer I want to ensure that I am coding everything clearly and not repetitively so that there will be less room for error later on.`
-`As a programmer I want my organization of my git commits and README documentation to be clear and accurate so that I will be able to fix any errors that I have quickly without the need for further debugging.`
+# Tic-Tac-Toe Client with Authentication
 
-`Day 1 working on the setup for the project and the html to start`
-`Day 2 working on the CSS for the project and trying to get started on the Javascript`
-`Day 3 work on the Javascript and start getting the JSON and AJAX`
-`Day 4 wrap everything up.`
+This is a Tic-Tac-Toe game client with user authorization implementation. There
+will be user Authentication with sign-up, sign-in, sign-out and change password.
+There will be a functioning gameboard with the ability to see game statistics.
 
-Going to start with the main page setup, followed followed by the login
+## Technologies Used
+
+- HTML
+- CSS
+- Bootstrap
+- Javascript
+- JQuery
+
+## Development
+
+I started off with implementing basic HTML for the foundation of the page
+authentication processes. From there I moved onto creating the gameboard and
+making it so that a user would be able to interact with it. Finally, I worked
+on completing the game logic and determining the winner and whether the game
+was a tie or not.
+
+### Unsolved Problems
+
+I have not been able to complete the styling for the application that I would
+like. Getting the app to look more like the wireframes below is the long term
+goal with some help from the youngins Elsa and Ana. 
+
+## User Stories and Wireframes
+
+- As a user, I want to be able to sign-up with an email and password.
+- As a user, I want to be able to sign-in with an email and password.
+- When signed in I want to be able to change my password.
+- When signed in I want to be able to sign-out of the application.
+- When signed in I want to be able to play the game.
+- When signed in I want to be able to be able to see my previously played games.
+
+![Sign-in/Sign-up page](https://i.imgur.com/v485VnW.png)
+![GamePage](https://i.imgur.com/nLtgV96.png)
