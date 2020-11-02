@@ -1,0 +1,104 @@
+ ,<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-Tac-Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <!-- using header for container 'div' for bootstrap -->
+      <header class="container-header">
+        <h1>Frozen Tic-Tac-Toe</h1>
+          <section>
+            <form id="sign-up-form">
+
+              <legend>Sign Up!</legend>
+
+              <label for="sign-up">Email</label>
+              <input id="sign-up" type="Email" name="credentials[email]" placeholder="Email" />
+
+              <label for="sign-up-password">Password</label>
+              <input id="sign-up-password" type="password" name="credentials[password]" placeholder="Password" />
+
+              <label for="sign-up-password_confirmation">Confirm Password</label>
+              <input id="sign-up-password_confirmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" />
+
+              <input type="submit" value="Sign up" />
+
+            </form>
+          </section>
+          <section>
+            <form id="sign-in-form">
+
+              <legend>Sign In!</legend>
+
+              <label for="sign-in">Email</label>
+              <input id="sign-in" type="Email" name="credentials[email]" placeholder="Email" />
+
+              <label for="sign-in-password">Password</label>
+              <input id="sign-in-password" type="password" name="credentials[password]" placeholder="Password" />
+
+              <input type="submit" value="Log In">
+            </form>
+          </section>
+          <section>
+            <form id="sign-out-form">
+
+              <legend>Sign Out</legend>
+              <input type="submit" value="Sign Out!">
+
+            </form>
+          </section>
+          <section>
+            <form id="change-password-form">
+
+              <legend>Change Password</legend>
+              <input type="password" name="passwords[old]" placeholder="Old Password">
+              <input type="password" name="passwords[new]" placeholder="New Password">
+              <input type="submit" value="Change Password">
+
+            </form>
+          </section>
+
+      </header>
+      <div id="message"></div>
+      <div id="Game-Message"></div>
+
+      <form id="create-game">
+        <label class="button">
+          <input id="new-game" type="submit" value="New Game!" />
+        </label>
+      </form>
+
+      <form id="get-games">
+        <label class="button">
+          <input type="submit" value="Previous Games Played" />
+        </label>
+      </form>
+
+      <section class="game-container">
+
+          <div id="gameboard" class="row h-100 board">
+            <div id="0" class="col-4 box" data-cell-index="0"></div>
+            <div id="1" class="col-4 box" data-cell-index="1"></div>
+            <div id="2" class="col-4 box" data-cell-index="2"></div>
+
+            <div id="3" class="col-4 box" data-cell-index="3"></div>
+            <div id="4" class="col-4 box" data-cell-index="4"></div>
+            <div id="5" class="col-4 box" data-cell-index="5"></div>
+
+            <div id="6" class="col-4 box" data-cell-index="6"></div>
+            <div id="7" class="col-4 box" data-cell-index="7"></div>
+            <div id="8" class="col-4 box" data-cell-index="8"></div>
+          </div>
+
+      </section>
+
+    </body>
+</html>
